@@ -1,46 +1,146 @@
-# Getting Started with Create React App
+### Countdown Timer – README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Overview
 
-## Available Scripts
+This project is a simple and clean web application that provides a countdown timer to a specific date and time. The main goal is to offer a straightforward tool to track time remaining for events such as deadlines, trips, exams, or personal goals.
 
-In the project directory, you can run:
+The application is built with:
 
-### `npm start`
+- **React** (with TypeScript)
+- **Tailwind CSS** for styling
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Features
 
-### `npm test`
+- Set a **target date and time** using a `datetime-local` input.
+- Live **countdown display** showing:
+  - Days
+  - Hours
+  - Minutes
+  - Seconds
+- Layout with a **minimal and neutral design**, suitable for personal or professional use.
+- Responsive layout that adapts to different screen sizes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+### Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React** (with TypeScript template)
+- **Tailwind CSS**
+- **Node.js** and **npm** (for project setup and scripts)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Getting Started
 
-### `npm run eject`
+#### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Node.js** (v16+ recommended)
+- **npm** (comes with Node.js)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To check if they are installed:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+node -v
+npm -v
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Clone the repository**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+git clone <your-repository-url>.git
+cd <your-project-folder>
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Set up Tailwind CSS**
+
+If not already configured:
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+Edit `tailwind.config.js`:
+
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+Edit `src/index.css`:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+---
+
+### Running the Application
+
+To start the development server:
+
+```bash
+npm start
+```
+
+The application will run at:
+
+```text
+http://localhost:3000
+```
+
+---
+
+### Project Structure (Simplified)
+
+```text
+src/
+├── App.tsx          // Main countdown timer component
+├── index.tsx        // React entry point
+├── index.css        // Tailwind CSS imports
+└── ...other files
+```
+
+---
+
+### How It Works
+
+- The user selects a **target date and time**.
+- The application calculates the difference between the current time and the selected target.
+- The remaining time is broken down into **days, hours, minutes and seconds**, and updated every second using `setInterval`.
+- When the target time is reached or passed, all values display as zero.
+
+---
+
+### Future Improvements (Ideas)
+
+- Add a message when the countdown reaches zero (e.g. “Time’s up!”).
+- Allow saving the target date in `localStorage` so it persists after a page reload.
+- Support multiple countdowns for different events.
+- Add sound or visual notification when the countdown finishes.
+
+---
+
+### License
+
+You can add your chosen licence here (for example, MIT, Apache 2.0, or a custom licence statement).
